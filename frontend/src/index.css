@@ -1,0 +1,105 @@
+:root {
+  /* Surfaces — graphite drafting table */
+  --bg: #0e1116;
+  --surface: #161b22;
+  --surface-2: #1c232c;
+  --surface-3: #11161d;
+  --line: #2a323d;
+  --line-soft: #222a34;
+
+  /* Ink */
+  --text: #e6edf3;
+  --text-dim: #8b97a5;
+  --text-faint: #5d6877;
+
+  /* Amber is reserved: AI moments + the active/selected element */
+  --accent: #f0a830;
+  --accent-dim: #b9842f;
+  --danger: #e0644e;
+
+  --radius: 10px;
+  --radius-sm: 7px;
+  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas,
+    monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+::selection {
+  background: rgba(240, 168, 48, 0.28);
+}
+
+/* Quiet, schematic scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2c3540 transparent;
+}
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #2c3540;
+  border-radius: 6px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #384350;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin {
+    animation: none;
+  }
+  * {
+    transition: none !important;
+  }
+}
