@@ -1,0 +1,10 @@
+[project]
+name = "repo-visualizer-backend"
+version = "1.0.0"
+description = "Static-analysis API for the Repository Structure Visualisation System"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
